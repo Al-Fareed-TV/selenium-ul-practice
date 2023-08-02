@@ -11,6 +11,7 @@ public class HeadlessModeExample {
         // Set up Chrome Options
         ChromeOptions options = new ChromeOptions();
         options.addArguments("headless");
+        //in this testing will be done without opening browser
 
         // Initialize WebDriver with Chrome Options
         WebDriver driver = new ChromeDriver(options);
