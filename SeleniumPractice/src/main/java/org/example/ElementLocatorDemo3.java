@@ -4,28 +4,28 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.concurrent.TimeUnit;
 
+import static java.lang.Thread.sleep;
+
 public class ElementLocatorDemo3 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         WebDriverManager.chromedriver().setup();
+
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://web-playground.ultralesson.com");
-
-        // Replace "element-css-selector" and "element-xpath" with actual values
-        String cssSelector = "element-css-selector";
-        String xpath = "element-xpath";
-
-        // Locating element by CSS Selector
-        WebElement elementByCssSelector = driver.findElement(By.cssSelector(cssSelector));
-        System.out.println("Text of the element located by CSS Selector: " + elementByCssSelector.getText());
-
-        // Locating element by XPath
-        WebElement elementByXpath = driver.findElement(By.xpath(xpath));
-        System.out.println("Text of the element located by XPath: " + elementByXpath.getText());
-
+        driver.manage().window().maximize();
+        System.out.println("url of the current page is : "+driver.getCurrentUrl());
+        System.out.println("Title  of the current page is : "+driver. getTitle());
+        // Get text from an element (replace "elementLocator" with actual element locator)
+        String elementLocator = "#shopify-section-header > sticky-header > header > nav";
+        WebElement element = driver.findElement(By.cssSelector(elementLocator));
+        String text = element.getText();
+        System.out.println("Element Text: " + text);
+        sleep(500);
         driver.close();
     }
 }
