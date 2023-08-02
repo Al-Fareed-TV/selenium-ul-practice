@@ -26,6 +26,7 @@ public class ElementLocatorDemo3 {
         String text = element.getText();
         System.out.println("Element Text: " + text);
         sleep(500);
+
         driver.close();
     }
 }
