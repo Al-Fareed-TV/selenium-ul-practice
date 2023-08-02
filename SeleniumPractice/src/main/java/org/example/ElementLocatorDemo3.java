@@ -15,8 +15,9 @@ public class ElementLocatorDemo3 {
         driver.get("https://web-playground.ultralesson.com");
 
         // Replace "element-css-selector" and "element-xpath" with actual values
-        String cssSelector = "#shopify-section-header > sticky-header > header > h1";
-        String xpath = "//*[@id=\"shopify-section-header\"]/sticky-header/header/h1";
+        String cssSelector = "element-css-selector";
+        String xpath = "element-xpath";
+
         // Locating element by CSS Selector
         WebElement elementByCssSelector = driver.findElement(By.cssSelector(cssSelector));
         System.out.println("Text of the element located by CSS Selector: " + elementByCssSelector.getText());
